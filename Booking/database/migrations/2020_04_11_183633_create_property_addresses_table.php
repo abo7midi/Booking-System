@@ -15,6 +15,19 @@ class CreatePropertyAddressesTable extends Migration
     {
         Schema::create('property_addresses', function (Blueprint $table) {
             $table->id();
+
+            $table->string('latitude');
+            $table->string('longitude');
+            $table->string('addressLine1');
+            $table->string('addressLine2');
+            $table->string('postCode');
+            $table->integer('cityID')->unsigned();
+            $table->foreign('cityID')->references('id')->on('cities');
+            $table->integer('countryID')->unsigned();
+            $table->foreign('countryID')->references('id')->on('countries');
+            $table->integer('areaID')->unsigned();
+            $table->foreign('areaID')->references('id')->on('areas');
+
             $table->timestamps();
         });
     }

@@ -15,6 +15,14 @@ class CreateBookingCommissionInvoicesTable extends Migration
     {
         Schema::create('booking_commission_invoices', function (Blueprint $table) {
             $table->id();
+
+            $table->double('totalIncome');
+            $table->double('commissionOfIncome');
+            $table->integer('propertyHostID')->unsigned();
+            $table->foreign('propertyHostID')->references('id')->on('property_hosts');
+            $table->integer('bookingID')->unsigned();
+            $table->foreign('bookingID')->references('id')->on('booking_infos');
+
             $table->timestamps();
         });
     }

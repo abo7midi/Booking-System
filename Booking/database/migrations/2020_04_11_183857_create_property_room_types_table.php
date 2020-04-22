@@ -15,6 +15,12 @@ class CreatePropertyRoomTypesTable extends Migration
     {
         Schema::create('property_room_types', function (Blueprint $table) {
             $table->id();
+
+            $table->integer('propertyID')->unsigned();
+            $table->foreign('propertyID')->references('id')->on('properties');
+            $table->integer('roomTypeID')->unsigned();
+            $table->foreign('roomTypeID')->references('id')->on('room_types');
+
             $table->timestamps();
         });
     }

@@ -15,6 +15,16 @@ class CreateCardInfosTable extends Migration
     {
         Schema::create('card_infos', function (Blueprint $table) {
             $table->id();
+
+            $table->string('firstNameOnCard');
+            $table->string('lastNameOnCard');
+            $table->string('cardNumber');
+            $table->date('expireDate');
+            $table->integer('customerID')->unsigned();
+            $table->foreign('customerID')->references('id')->on('customers');
+            $table->integer('cardTypeID')->unsigned();
+            $table->foreign('cardTypeID')->references('id')->on('card_types');
+
             $table->timestamps();
         });
     }

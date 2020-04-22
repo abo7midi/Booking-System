@@ -15,6 +15,12 @@ class CreatePropertyHostsTable extends Migration
     {
         Schema::create('property_hosts', function (Blueprint $table) {
             $table->id();
+
+            $table->double('proposedCommission');
+            $table->string('Bio');
+            $table->string('propertyHostDisplayName1');
+            $table->string('propertyHostDisplayName2');
+
             $table->timestamps();
         });
     }

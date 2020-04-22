@@ -15,6 +15,9 @@ class CreateOfficialStarRatingsTable extends Migration
     {
         Schema::create('official_star_ratings', function (Blueprint $table) {
             $table->id();
+
+            $table->string('starRating');
+
             $table->timestamps();
         });
     }

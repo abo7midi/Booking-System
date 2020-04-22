@@ -15,6 +15,10 @@ class CreateAgentCreditsTable extends Migration
     {
         Schema::create('agent_credits', function (Blueprint $table) {
             $table->id();
+
+            $table->integer('amount');
+            $table->date('date');
+
             $table->timestamps();
         });
     }

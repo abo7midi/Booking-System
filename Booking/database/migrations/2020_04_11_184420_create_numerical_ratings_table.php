@@ -15,6 +15,8 @@ class CreateNumericalRatingsTable extends Migration
     {
         Schema::create('numerical_ratings', function (Blueprint $table) {
             $table->id();
+            $table->string('numericalRating');
+
             $table->timestamps();
         });
     }

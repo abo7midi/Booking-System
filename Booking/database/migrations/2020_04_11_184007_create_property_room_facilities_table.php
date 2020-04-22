@@ -15,6 +15,12 @@ class CreatePropertyRoomFacilitiesTable extends Migration
     {
         Schema::create('property_room_facilities', function (Blueprint $table) {
             $table->id();
+
+            $table->integer('facilityID')->unsigned();
+            $table->foreign('facilityID')->references('id')->on('facilities_types');
+            $table->integer('propertyRoomID')->unsigned();
+            $table->foreign('propertyRoomID')->references('id')->on('property_room_types');
+
             $table->timestamps();
         });
     }

@@ -15,6 +15,13 @@ class CreatePropertyReviewsTable extends Migration
     {
         Schema::create('property_reviews', function (Blueprint $table) {
             $table->id();
+
+            $table->string('description');
+            $table->integer('propertyID')->unsigned();
+            $table->foreign('propertyID')->references('id')->on('properties');
+            $table->integer('bookingID')->unsigned();
+            $table->foreign('bookingID')->references('id')->on('booking_infos');
+
             $table->timestamps();
         });
     }

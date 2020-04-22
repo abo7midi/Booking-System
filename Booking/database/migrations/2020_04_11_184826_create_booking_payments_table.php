@@ -15,6 +15,18 @@ class CreateBookingPaymentsTable extends Migration
     {
         Schema::create('booking_payments', function (Blueprint $table) {
             $table->id();
+
+            $table->double('paymentAmount');
+            $table->dateTime('dateTime');
+            $table->string('lastFour');
+            $table->string('trnsitionNotes');
+            $table->integer('bookingID')->unsigned();
+            $table->foreign('bookingID')->references('id')->on('booking_infos');
+            $table->integer('cardID')->unsigned();
+            $table->foreign('cardID')->references('id')->on('card_infos');
+            $table->integer('paymentMethodID')->unsigned();
+            $table->foreign('paymentMethodID')->references('id')->on('payment_methods');
+
             $table->timestamps();
         });
     }

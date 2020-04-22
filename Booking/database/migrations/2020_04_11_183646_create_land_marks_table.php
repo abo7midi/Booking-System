@@ -15,6 +15,11 @@ class CreateLandMarksTable extends Migration
     {
         Schema::create('land_marks', function (Blueprint $table) {
             $table->id();
+
+            $table->string('landMarkName');
+            $table->integer('cityID')->unsigned();
+            $table->foreign('cityID')->references('id')->on('cities');
+
             $table->timestamps();
         });
     }

@@ -15,6 +15,9 @@ class CreatePhoneExtentionsTable extends Migration
     {
         Schema::create('phone_extentions', function (Blueprint $table) {
             $table->id();
+
+            $table->string('phoneExtentions');
+
             $table->timestamps();
         });
     }

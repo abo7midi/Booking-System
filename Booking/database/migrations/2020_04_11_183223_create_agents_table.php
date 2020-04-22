@@ -15,6 +15,14 @@ class CreateAgentsTable extends Migration
     {
         Schema::create('agents', function (Blueprint $table) {
             $table->id();
+
+            $table->string('agentDisplayName1');
+            $table->string('agentDisplayName2');
+            $table->string('agentBio');
+            $table->double('propsedCommission');
+            $table->integer('addressID')->unsigned();
+            $table->foreign('addressID')->references('id')->on('addresses');
+
             $table->timestamps();
         });
     }

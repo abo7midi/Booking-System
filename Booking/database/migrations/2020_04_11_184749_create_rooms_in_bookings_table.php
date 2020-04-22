@@ -15,6 +15,13 @@ class CreateRoomsInBookingsTable extends Migration
     {
         Schema::create('rooms_in_bookings', function (Blueprint $table) {
             $table->id();
+
+
+            $table->integer('roomAvailableID')->unsigned();
+            $table->foreign('roomAvailableID')->references('id')->on('room_availables');
+            $table->integer('bookingID')->unsigned();
+            $table->foreign('bookingID')->references('id')->on('booking_infos');
+
             $table->timestamps();
         });
     }

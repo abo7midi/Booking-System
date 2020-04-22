@@ -15,6 +15,16 @@ class CreateBookingInfosTable extends Migration
     {
         Schema::create('booking_infos', function (Blueprint $table) {
             $table->id();
+
+            $table->date('dateBookedOn');
+            $table->double('totalPrice');
+            $table->integer('outstandingAmount');
+            $table->integer('cancelled');
+            $table->integer('agentID')->unsigned();
+            $table->foreign('agentID')->references('id')->on('agents');
+            $table->integer('customerID')->unsigned();
+            $table->foreign('customerID')->references('id')->on('customers');
+
             $table->timestamps();
         });
     }

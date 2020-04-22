@@ -15,6 +15,14 @@ class CreateRoomAvailablesTable extends Migration
     {
         Schema::create('room_availables', function (Blueprint $table) {
             $table->id();
+            $table->integer('maxRoomAvailable');
+            $table->double('roomPrice');
+            $table->date('date');
+            $table->integer('propertyRoomID')->unsigned();
+            $table->foreign('propertyRoomID')->references('id')->on('property_room_types');
+            $table->integer('paymentMethodID')->unsigned();
+            $table->foreign('paymentMethodID')->references('id')->on('payment_methods');
+
             $table->timestamps();
         });
     }
