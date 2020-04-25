@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use  \Illuminate\Support\Facades\Config;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,8 +14,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::group(['prefix'=>'admin'],function (){
+Route::group(['prefix'=>'admin','namespace'=>'Admin'],function (){
+  Config::set('auth.default','admain');
+ Route::get('login','AdminAuth@login');
+    Route::post('login','AdminAuth@dologin');
+  Route::group(['middleware'=>'admin'],function (){
+
+
 Route::get('/',function (){
    return view('admin.home');
 });
+
+  });
 });

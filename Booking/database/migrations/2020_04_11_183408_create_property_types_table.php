@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateProertyTypesTable extends Migration
+class CreatePropertyTypesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateProertyTypesTable extends Migration
      */
     public function up()
     {
-        Schema::create('proerty_types', function (Blueprint $table) {
+        Schema::create('property_types', function (Blueprint $table) {
             $table->id();
 
             $table->string('propertyTypeName');
@@ -29,6 +29,6 @@ class CreateProertyTypesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('proerty_types');
+        Schema::dropIfExists('property_types');
     }
 }
