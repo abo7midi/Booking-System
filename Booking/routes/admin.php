@@ -15,15 +15,19 @@ use  \Illuminate\Support\Facades\Config;
 */
 
 Route::group(['prefix'=>'admin','namespace'=>'Admin'],function (){
-  Config::set('auth.default','admain');
+
+  Config::set('auth.defines','admin');
  Route::get('login','AdminAuth@login');
+ Route::get('forget/password','AdminAuth@forget_password');
+ Route::post('forget/password','AdminAuth@forget_password_post');
     Route::post('login','AdminAuth@dologin');
-  Route::group(['middleware'=>'admin'],function (){
+  Route::group(['middleware'=>'admin:admin'],function (){
 
 
 Route::get('/',function (){
    return view('admin.home');
 });
+Route::any('logout','AdminAuth@logout');
 
   });
 });

@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>{{trans('admin.login')}}</title>
+    <title>{{trans('admin.forget_password')}}</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -27,7 +27,7 @@
     <div class="card">
         <div class="card-body login-card-body">
             <h1> {{session()->get('error')}} </h1>
-            <p class="login-box-msg">Sign in to start your session</p>
+            <p class="login-box-msg">reset password</p>
 
             <form  method="post">
                 {!! csrf_field() !!}
@@ -39,26 +39,12 @@
                         </div>
                     </div>
                 </div>
-                <div class="input-group mb-3">
-                    <input type="password" name="password" class="form-control" placeholder="Password">
-                    <div class="input-group-append">
-                        <div class="input-group-text">
-                            <span class="fas fa-lock"></span>
-                        </div>
-                    </div>
-                </div>
+
                 <div class="row">
-                    <div class="col-8">
-                        <div class="icheck-primary">
-                            <input type="checkbox" name="rememberme" value="1" id="remember">
-                            <label for="remember">
-                                Remember Me
-                            </label>
-                        </div>
-                    </div>
+
                     <!-- /.col -->
                     <div class="col-4">
-                        <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+                        <button type="submit" class="btn btn-primary btn-block">Reset</button>
                     </div>
                     <!-- /.col -->
                 </div>
@@ -68,7 +54,7 @@
             <!-- /.social-auth-links -->
 
             <p class="mb-1">
-                <a href="{{aurl('forget/password')}}">I forgot my password</a>
+                <a href="{{aurl('login')}}">Sign In</a>
             </p>
 
         </div>
