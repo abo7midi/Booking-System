@@ -16,6 +16,7 @@
 </div>
 <!-- ./wrapper -->
 
+
 <!-- jQuery -->
 <script src="{{url('/design/AdminLTE/plugins/jquery/jquery.min.js')}}"></script>
 <!-- jQuery UI 1.11.4 -->
@@ -26,6 +27,11 @@
 </script>
 <!-- Bootstrap 4 -->
 <script src="{{url('/design/AdminLTE/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+<!-- DataTables -->
+<script src="{{url('design/AdminLTE')}}/plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="{{url('design/AdminLTE')}}/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+<script src="{{url('design/AdminLTE')}}/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+<script src="{{url('design/AdminLTE')}}/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
 <!-- ChartJS -->
 <script src="{{url('/design/AdminLTE/plugins/chart.js/Chart.min.js')}}"></script>
 <!-- Sparkline -->
@@ -50,5 +56,8 @@
 <script src="{{url('/design/AdminLTE/dist/js/pages/dashboard.js')}}"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="{{url('/design/AdminLTE/dist/js/demo.js')}}"></script>
+
+@stack('js');
+@stack('css');
 </body>
 </html>

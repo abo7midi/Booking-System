@@ -24,8 +24,8 @@ class CreateUsersTable extends Migration
                 $table->integer('loginAttempt');
                 $table->integer('todayLoginAttempt');
                 $table->boolean('isLogin');
-                $table->integer('typeID')->unsigned();
-                $table->foreign('typeID')->references('ID')->on('LoginType');
+                $table->unsignedBigInteger('typeID');
+                $table->foreign('typeID')->references('id')->on('login_types');
                 $table->integer('customerID')->unsigned();
                 $table->foreign('customerID')->references('ID')->on('Customer');
                 $table->integer('agentID')->unsigned();

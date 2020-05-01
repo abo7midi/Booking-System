@@ -22,12 +22,11 @@ Route::group(['prefix'=>'admin','namespace'=>'Admin'],function (){
  Route::post('forget/password','AdminAuth@forget_password_post');
     Route::post('login','AdminAuth@dologin');
   Route::group(['middleware'=>'admin:admin'],function (){
+        Route::resource('users','UserController');
+        Route::get('/',function (){
+           return view('admin.home');
+        });
+        Route::any('logout','AdminAuth@logout');
 
-
-Route::get('/',function (){
-   return view('admin.home');
-});
-Route::any('logout','AdminAuth@logout');
-
-  });
+          });
 });
