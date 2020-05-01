@@ -6,4 +6,6 @@ return [
     'forget_password'=>'Forget Password',
     'user'=>'Users Account',
     'dashboard'=>'Dashboard',
+    'the_link_reset_sent'=>'The Reset Link is Sent Pleas Check Your Email',
+
 ];

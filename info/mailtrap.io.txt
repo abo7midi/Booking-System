@@ -1,0 +1,9 @@
+﻿Credentials
+Reset SMTP/POP3
+SMTP
+Host:smtp.mailtrap.io
+Port:25 or 465 or 587 or 2525
+Username:68a03865d39da0
+Password:bded321756d3aa
+Auth:PLAIN, LOGIN and CRAM-MD5
+TLS:Optional (STARTTLS on all ports)
