@@ -20,6 +20,8 @@ Route::group(['prefix'=>'admin','namespace'=>'Admin'],function (){
  Route::get('login','AdminAuth@login');
  Route::get('forget/password','AdminAuth@forget_password');
  Route::post('forget/password','AdminAuth@forget_password_post');
+ Route::get('reset/password/{token}','AdminAuth@reset_password');
+ Route::post('reset/password/{token}','AdminAuth@reset_password_post');
     Route::post('login','AdminAuth@dologin');
   Route::group(['middleware'=>'admin:admin'],function (){
 
