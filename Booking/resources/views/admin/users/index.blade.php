@@ -5,9 +5,7 @@
             <h3 class="box-title">{{$title}}</h3>
         </div>
         <div class="box-body">
-            {!! $dataTable->table([
-                'class'=>'dataTable table table-striped table-hover table-bordered'
-            ]) !!}
+            {!! $dataTable->table(['class'=>'dataTable table table-striped table-hover table-bordered'],true) !!}
         </div>
     </div>
 

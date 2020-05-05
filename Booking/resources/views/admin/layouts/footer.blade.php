@@ -32,6 +32,8 @@
 <script src="{{url('design/AdminLTE')}}/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
 <script src="{{url('design/AdminLTE')}}/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
 <script src="{{url('design/AdminLTE')}}/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+<script src="{{url('design/AdminLTE')}}/plugins/datatables-responsive/js/dataTables.buttons.min.js"></script>
+<script src="{{url('')}}/vendor/datatables/buttons.server-side.js"></script>
 <!-- ChartJS -->
 <script src="{{url('/design/AdminLTE/plugins/chart.js/Chart.min.js')}}"></script>
 <!-- Sparkline -->

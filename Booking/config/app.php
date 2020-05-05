@@ -177,6 +177,7 @@ return [
 
         //Yajra
         Yajra\DataTables\DataTablesServiceProvider::class,
+        Yajra\DataTables\ButtonsServiceProvider::class,
 
     ],
 

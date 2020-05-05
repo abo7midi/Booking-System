@@ -21,7 +21,12 @@ class UserDataTable extends DataTable
     {
         return datatables()
             ->eloquent($query)
-            ->addColumn('action', 'user.action');
+            ->addColumn('edit', 'admin.users.btn.edit')
+            ->addColumn('delete', 'admin.users.btn.delete')
+            ->rawColumns([
+                'edit',
+                'delete',
+            ]);
     }
 
     /**
@@ -46,15 +51,32 @@ class UserDataTable extends DataTable
                     ->setTableId('user-table')
                     ->columns($this->getColumns())
                     ->minifiedAjax()
-                    ->dom('Bfrtip')
+                    ->dom('Blfrtip')
+                    ->lengthMenu([[10,25,50,100],[10,25,50,trans('admin.all_record')]])
                     ->orderBy(1)
+                    /*->parameters([
+                        'lengthMenu' => [
+                            [ 10, 25, 50, -1 ],
+                            [ '10 rows', '25 rows', '50 rows', 'Show all' ]
+                        ],
+                    ])*/
                     ->buttons(
-                        Button::make('create'),
-                        Button::make('export'),
-                        Button::make('print'),
-                        Button::make('reset'),
-                        Button::make('reload')
-                    );
+                        Button::make(trans('admin.create_btn')),
+                        Button::make(trans('admin.export_btn')),
+                        Button::make(trans('admin.print_btn')),
+                        Button::make(trans('admin.reset_btn')),
+                        Button::make(trans('admin.reload_btn'))
+                    )
+                    ->initComplete('function () {
+                                                this.api().columns([3,4]).every(function () {
+                                                    var column = this;
+                                                    var input = document.createElement("input");
+                                                    $(input).appendTo($(column.footer()).empty())
+                                                    .on("keyup", function () {
+                                                        var val = $.fn.dataTable.util.escapeRegex($(this).val());
+                                                        column.search(val ? val : \'\', true, false).draw();   });
+            });
+        }');
     }
 
     /**
@@ -65,20 +87,21 @@ class UserDataTable extends DataTable
     protected function getColumns()
     {
         return [
-            Column::computed('action')
+            Column::computed(trans('admin.edit-col'))
                   ->exportable(false)
                   ->printable(false)
                   ->width(60)
                   ->addClass('text-center'),
-            Column::make('id'),
-            Column::make('name'),
-            Column::make('email'),
-            Column::make('password'),
-            Column::make('is login'),
-            Column::make('type id'),
-            Column::make('type id'),
-            Column::make('created_at'),
-            Column::make('updated_at'),
+            Column::computed(trans('admin.delete-col'))
+                ->exportable(false)
+                ->printable(false)
+                ->width(60)
+                ->addClass('text-center'),
+            Column::make(trans('admin.id-col')),
+            Column::make(trans('admin.name-col')),
+            Column::make(trans('admin.email-col')),
+            Column::make(trans('admin.create-at-col')),
+            Column::make(trans('admin.update-at-col')),
         ];
     }
 
