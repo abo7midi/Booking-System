@@ -21,7 +21,7 @@ class TestData extends Seeder
             $add->oldPassword='123123';
             $add->loginAttempt='1';
             $add->todayLoginAttempt='1';
-            $add->isLogin='1';
+            $add->isLogin='0';
             $add->typeID='1';
             $add->customerID='1';
             $add->agentID='1';
