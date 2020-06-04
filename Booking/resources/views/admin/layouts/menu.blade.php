@@ -16,6 +16,25 @@
                 <i class="far fa-circle nav-icon"></i>
             </a>
         </li>
+        <!-- Notifications Dropdown Menu -->
+        <li class="nav-item dropdown">
+            <a class="nav-link" data-toggle="dropdown" href="#">
+                <i class="fa fa-globe"></i>
+
+            </a>
+            <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+
+                <a href="{{aurl('lang/ar')}}" class="dropdown-item">
+                  <i class="fa fa-flag"></i>   العربية
+                </a>
+                <div class="dropdown-divider"></div>
+                <a href="{{aurl('lang/en')}}" class="dropdown-item">
+                    <i class="fa fa-flag"></i> English
+                </a>
+                <div class="dropdown-divider"></div>
+
+            </div>
+        </li>
     </ul>
 
     <!-- SEARCH FORM -->
