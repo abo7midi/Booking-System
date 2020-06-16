@@ -47,5 +47,15 @@ return [
     'sPrevious'  => 'Previous',
     'sSortAscending'  => 'SortAscending',
     'sSortDescending'  => 'SortDescending',
+    'delete_selected'=>'Delete All',
+    'delete'=>'Delete',
+    'ask_delete_item'=>'Are You Sure To Delete ',
+    'please_check_some_records'=>'Please Check Some Records',
+    'yes'=>'Yes',
+    'no'=>'No',
+    'close'=>'Close',
+    'create_room_type'=>'Create Room Type',
+
+
 
 ];

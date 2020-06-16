@@ -2,3 +2,51 @@
 .sidebar-menu li .label, .sidebar-menu li .badge {
 	margin-top: -15px !important;
 }
+@media (min-width:768px){
+    body:not(.sidebar-mini-md) .content-wrapper,body:not(.sidebar-mini-md) .main-footer,body:not(.sidebar-mini-md) .main-header
+{transition:margin-left .3s ease-in-out;margin-right:250px !important;
+        margin-left:0 !important;}}
+
+.main-sidebar, .left-side {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding-top: 50px;
+    min-height: 100%;
+    width: 230px;
+    z-index: 810;
+    -webkit-transition: -webkit-transform .3s ease-in-out,width .3s ease-in-out;
+    -moz-transition: -moz-transform .3s ease-in-out,width .3s ease-in-out;
+    -o-transition: -o-transform .3s ease-in-out,width .3s ease-in-out;
+    transition: transform .3s ease-in-out,width .3s ease-in-out;
+}
+body{
+    text-align: right;
+}
+.main-sidebar, .left-side {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding-top: 50px;
+    min-height: 100%;
+    width: 230px;
+    z-index: 810;
+    -webkit-transition: -webkit-transform 0.3s ease-in-out, width 0.3s ease-in-out;
+    -moz-transition: -moz-transform 0.3s ease-in-out, width 0.3s ease-in-out;
+    -o-transition: -o-transform 0.3s ease-in-out, width 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out, width 0.3s ease-in-out;
+}
+.main-sidebar, .main-sidebar::before {
+    transition: margin-left .3s ease-in-out,width .3s ease-in-out;
+    width: 250px;
+}
+
+element.style {
+}
+.nav-sidebar>.nav-item {
+    margin-bottom: 0;
+}
+.nav-pills>li+li {
+    margin-right: 2px;
+  margin-left: 0;
+}

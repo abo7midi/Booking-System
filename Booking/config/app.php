@@ -165,6 +165,9 @@ return [
         /*
          * Package Service Providers...
          */
+        //Yajra
+        Yajra\DataTables\DataTablesServiceProvider::class,
+        Yajra\DataTables\ButtonsServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -175,9 +178,9 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
-        //Yajra
-        Yajra\DataTables\DataTablesServiceProvider::class,
-        Yajra\DataTables\ButtonsServiceProvider::class,
+
+
+
 
     ],
 

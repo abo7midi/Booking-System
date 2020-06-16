@@ -58,6 +58,7 @@
 <script src="{{url('/design/AdminLTE/dist/js/pages/dashboard.js')}}"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="{{url('/design/AdminLTE/dist/js/demo.js')}}"></script>
+<script src="{{url('/design/AdminLTE/dist/js/bookingScript.js')}}"></script>
 
 @stack('js');
 @stack('css');

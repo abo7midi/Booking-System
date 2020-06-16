@@ -27,6 +27,7 @@ class RoomTypeController extends Controller
     public function create()
     {
         //
+        return view('admin.rooms.create_room_type',['title'=>trans('admin.create_room_type')]);
     }
 
     /**

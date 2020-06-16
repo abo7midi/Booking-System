@@ -16,7 +16,7 @@
     <!-- JQVMap -->
     <link rel="stylesheet" href="{{url('/design/AdminLTE/plugins/jqvmap/jqvmap.min.css')}}">
     <!-- Theme style -->
-
+    <link rel="stylesheet" href="{{url('/design/AdminLTE/dist/css/adminlte.min.css')}}">
     @if(direction()=='rtl')
 
             <!-- AdminLTE Skins. Choose a skin from the css/skins
@@ -28,7 +28,8 @@
         <link rel="stylesheet" href="{{url('/design/AdminLTE/dist/css/rtl/rtl.css')}}">
         <link rel="stylesheet" href="{{url('/design/AdminLTE/dist/fonts/fonts-fa.css')}}">
      @endif
-    <link rel="stylesheet" href="{{url('/design/AdminLTE/dist/css/adminlte.min.css')}}">
+
+    <link rel="stylesheet" href="{{url('/design/AdminLTE/dist/css/bookingStyle.css')}}">
     <!-- overlayScrollbars -->
     <link rel="stylesheet" href="{{url('/design/AdminLTE/plugins/overlayScrollbars/css/OverlayScrollbars.min.css')}}">
     <!-- Daterange picker -->
@@ -40,5 +41,8 @@
     <!-- DataTables -->
     <link rel="stylesheet" href="{{url('design/AdminLTE/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css')}}">
     <link rel="stylesheet" href="{{url('design/AdminLTE/plugins/datatables-responsive/css/responsive.bootstrap4.min.css')}}">
+
+
+
 
 </head>

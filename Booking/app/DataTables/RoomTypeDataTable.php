@@ -21,11 +21,13 @@ class RoomTypeDataTable extends DataTable
     {
         return datatables()
             ->eloquent($query)
+            ->addColumn('checkbox', 'admin.layouts.btn.checkbox')
             ->addColumn('edit', 'admin.layouts.btn.edit')
             ->addColumn('delete', 'admin.layouts.btn.delete')
             ->rawColumns([
                 'edit',
                 'delete',
+                'checkbox',
             ]);
     }
 
@@ -58,16 +60,18 @@ class RoomTypeDataTable extends DataTable
                     ->lengthMenu([[10,25,50,100],[10,25,50,trans('admin.all_record')]])
                     ->orderBy(1)
                     ->buttons(
-                        Button::make('create')->className('btn btn-primary')->text(' <i class="fa fa-plus"></i> '.trans('admin.add_room_type')),
+                        Button::make('create')->className('btn btn-success')->text(' <i class="fa fa-plus"></i> '.trans('admin.add_room_type')),
                         Button::make('csv')->className('btn btn-primary')->text(trans('admin.ex_csv').' <i class="fa fa-file"></i>'),
                         Button::make('excel')->className('btn btn-primary')->text(trans('admin.ex_excel').' <i class="fa fa-file"></i>'),
                         Button::make('pdf')->className('btn btn-primary')->text(trans('admin.ex_pdf').' <i class="fa fa-file"></i>'),
                         Button::make('print')->className('btn btn-primary'),
-                        Button::make('reset')->className('btn btn-primary'),
-                        Button::make('reload')->className('btn btn-primary')
+                        Button::make('reset')->className('btn btn-default'),
+                        Button::make('reload')->className('btn btn-dark'),
+                        Button::make('create')->action('')->className('btn btn-danger delBtn')->text(trans('admin.delete_selected').' <i class="fa fa-trash"></i>'),
+
                     )
             ->initComplete('function () {
-                                                this.api().columns([0,1,2,3]).every(function () {
+                                                this.api().columns([1,2,3]).every(function () {
                                                     var column = this;
                                                     var input = document.createElement("input");
                                                     $(input).appendTo($(column.footer()).empty())
@@ -88,7 +92,12 @@ class RoomTypeDataTable extends DataTable
     {
         return [
 
-
+            Column::computed('checkbox')
+                ->exportable(false)
+                ->printable(false)
+                ->width(60)
+                ->addClass('text-center')
+                ->title('<input type="checkbox" class="check_all" onclick="check_all()">'),
             Column::make(trans('admin.id-col')),
             Column::make('roomName')->title(trans('admin.type-name-col')),
             Column::make('created_at')->title(trans('admin.create-at-col')),
@@ -106,6 +115,7 @@ class RoomTypeDataTable extends DataTable
                 ->width(60)
                 ->addClass('text-center')
                 ->title(trans('admin.delete-col')),
+
         ];
     }
 
