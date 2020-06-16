@@ -67,7 +67,7 @@ class RoomTypeDataTable extends DataTable
                         Button::make('print')->className('btn btn-primary'),
                         Button::make('reset')->className('btn btn-default'),
                         Button::make('reload')->className('btn btn-dark'),
-                        Button::make('create')->action('')->className('btn btn-danger delBtn')->text(trans('admin.delete_selected').' <i class="fa fa-trash"></i>'),
+                        Button::make('create')->action('')->className('btn btn-danger delBtn')->text(trans('admin.delete_selected').' <i class="fa fa-trash"></i>')
 
                     )
             ->initComplete('function () {
