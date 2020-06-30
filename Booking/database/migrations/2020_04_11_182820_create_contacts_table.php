@@ -16,7 +16,7 @@ class CreateContactsTable extends Migration
         Schema::create('contacts', function (Blueprint $table) {
             $table->id();
 
-            $table->integer('customerID')->unsigned();
+            $table->unsignedBigInteger('customerID')->unsigned();
             $table->foreign('customerID')->references('id')->on('customers');
 
             $table->timestamps();

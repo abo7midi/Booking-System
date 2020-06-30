@@ -17,9 +17,9 @@ class CreateRoomsInBookingsTable extends Migration
             $table->id();
 
 
-            $table->integer('roomAvailableID')->unsigned();
+            $table->unsignedBigInteger('roomAvailableID')->unsigned();
             $table->foreign('roomAvailableID')->references('id')->on('room_availables');
-            $table->integer('bookingID')->unsigned();
+            $table->unsignedBigInteger('bookingID')->unsigned();
             $table->foreign('bookingID')->references('id')->on('booking_infos');
 
             $table->timestamps();

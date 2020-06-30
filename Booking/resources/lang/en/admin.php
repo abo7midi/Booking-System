@@ -55,7 +55,14 @@ return [
     'no'=>'No',
     'close'=>'Close',
     'create_room_type'=>'Create Room Type',
-
-
+    'add_new_user'=>"Add New User",
+    'record_added'=>'added Successfully',
+    /* property cols*/
+    'propertyName-col'=>'Name',
+    'starRatingID-col'=>'Star',
+    'propertyHostID-col'=>'Host',
+    'propertyAddressID-col'=>'Address',
+    'propertyTypeID-col'=>'Type',
+    /*********************************/
 
 ];

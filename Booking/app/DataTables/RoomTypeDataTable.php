@@ -91,7 +91,6 @@ class RoomTypeDataTable extends DataTable
     protected function getColumns()
     {
         return [
-
             Column::computed('checkbox')
                 ->exportable(false)
                 ->printable(false)

@@ -16,9 +16,9 @@ class CreatePropertyLanguagesTable extends Migration
         Schema::create('property_languages', function (Blueprint $table) {
             $table->id();
 
-            $table->integer('propertyHostID')->unsigned();
+            $table->unsignedBigInteger('propertyHostID')->unsigned();
             $table->foreign('propertyHostID')->references('id')->on('property_hosts');
-            $table->integer('languageID')->unsigned();
+            $table->unsignedBigInteger('languageID')->unsigned();
             $table->foreign('languageID')->references('id')->on('languages');
 
             $table->timestamps();

@@ -26,5 +26,6 @@ class AppServiceProvider extends ServiceProvider
     {
         //
         Schema::enableForeignKeyConstraints();
+        Schema::defaultStringLength(191);
     }
 }

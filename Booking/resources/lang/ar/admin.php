@@ -55,4 +55,13 @@ return [
     'no'=>'الغاء',
     'close'=>'اغلاق',
     'create_room_type'=>'انشاء نوع جديد للغرف',
+    'add_new_user'=>"إضافة مستخدم جديد",
+    'record_added'=>'تمت الاضافة بنجاح',
+    /* property cols*/
+    'propertyName-col'=>'الاسم',
+    'starRatingID-col'=>'النجوم',
+    'propertyHostID-col'=>'المالك',
+    'propertyAddressID-col'=>'العنوان',
+    'propertyTypeID-col'=>'النوع',
+    /*********************************/
 ];

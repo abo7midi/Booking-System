@@ -20,7 +20,7 @@ class CreateAgentsTable extends Migration
             $table->string('agentDisplayName2');
             $table->string('agentBio');
             $table->double('propsedCommission');
-            $table->integer('addressID')->unsigned();
+            $table->unsignedBigInteger('addressID')->unsigned();
             $table->foreign('addressID')->references('id')->on('addresses');
 
             $table->timestamps();

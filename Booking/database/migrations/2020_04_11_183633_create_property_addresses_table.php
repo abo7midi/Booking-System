@@ -21,11 +21,11 @@ class CreatePropertyAddressesTable extends Migration
             $table->string('addressLine1');
             $table->string('addressLine2');
             $table->string('postCode');
-            $table->integer('cityID')->unsigned();
+            $table->unsignedBigInteger('cityID')->unsigned();
             $table->foreign('cityID')->references('id')->on('cities');
-            $table->integer('countryID')->unsigned();
+            $table->unsignedBigInteger('countryID')->unsigned();
             $table->foreign('countryID')->references('id')->on('countries');
-            $table->integer('areaID')->unsigned();
+            $table->unsignedBigInteger('areaID')->unsigned();
             $table->foreign('areaID')->references('id')->on('areas');
 
             $table->timestamps();

@@ -5,9 +5,18 @@
             <h3 class="box-title">{{$title}}</h3>
         </div>
         <div class="box-body">
+            {!! Form::open(['id'=>'form_data','url' => aurl('rooms_types/destroy/selected')]) !!}
+
+            {!! Form::hidden('_method','delete') !!}
             {!! $dataTable->table(['class'=>'dataTable table table-striped table-hover table-bordered'],true) !!}
+
+            {!! Form::close() !!}
         </div>
     </div>
+
+    <!--************ modal *************-->
+
+    <!-- Modal -->
     <div id="multipaleDelete" class="modal fade" role="dialog">
         <div class="modal-dialog">
 

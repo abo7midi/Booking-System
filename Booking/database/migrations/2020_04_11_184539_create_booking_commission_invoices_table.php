@@ -18,9 +18,9 @@ class CreateBookingCommissionInvoicesTable extends Migration
 
             $table->double('totalIncome');
             $table->double('commissionOfIncome');
-            $table->integer('propertyHostID')->unsigned();
+            $table->unsignedBigInteger('propertyHostID')->unsigned();
             $table->foreign('propertyHostID')->references('id')->on('property_hosts');
-            $table->integer('bookingID')->unsigned();
+            $table->unsignedBigInteger('bookingID')->unsigned();
             $table->foreign('bookingID')->references('id')->on('booking_infos');
 
             $table->timestamps();

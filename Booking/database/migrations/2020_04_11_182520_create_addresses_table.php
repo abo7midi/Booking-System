@@ -20,9 +20,9 @@ class CreateAddressesTable extends Migration
             $table->string('customerLine2');
             $table->string('customerLine3');
             $table->string('postCode');
-            $table->integer('cityID')->unsigned();
+            $table->unsignedBigInteger('cityID')->unsigned();
             $table->foreign('cityID')->references('id')->on('cities');
-            $table->integer('countryID')->unsigned();
+            $table->unsignedBigInteger('countryID')->unsigned();
             $table->foreign('countryID')->references('id')->on('countries');
 
             $table->timestamps();

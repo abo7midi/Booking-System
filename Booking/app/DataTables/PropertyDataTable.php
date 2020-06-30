@@ -2,15 +2,14 @@
 
 namespace App\DataTables;
 
-use App\User;
-use Illuminate\Support\Facades\URL;
+use App\Property;
 use Yajra\DataTables\Html\Button;
 use Yajra\DataTables\Html\Column;
 use Yajra\DataTables\Html\Editor\Editor;
 use Yajra\DataTables\Html\Editor\Fields;
 use Yajra\DataTables\Services\DataTable;
 
-class UserDataTable extends DataTable
+class PropertyDataTable extends DataTable
 {
     /**
      * Build DataTable class.
@@ -30,19 +29,19 @@ class UserDataTable extends DataTable
                 'delete',
                 'checkbox',
             ]);
+
     }
 
     /**
      * Get query source of dataTable.
      *
-     * @param \App\User $model
+     * @param \App\HotelDataTable $model
      * @return \Illuminate\Database\Eloquent\Builder
      */
-    public function query(User $model)
+    public function query(PropertyDataTable $model)
     {
         return $model->newQuery();
     }
-
 
     /**
      * Optional method if you want to use html builder.
@@ -59,9 +58,7 @@ class UserDataTable extends DataTable
             ->lengthMenu([[10,25,50,100],[10,25,50,trans('admin.all_record')]])
             ->orderBy(1)
             ->buttons(
-                Button::make('create')->className('btn btn-success')->text(' <i class="fa fa-plus"></i> '.trans('admin.add_new_user'))->action("function(){
-                 window.location.href='".\URL::current()."/create'   
-                }"),
+                Button::make('create')->className('btn btn-success')->text(' <i class="fa fa-plus"></i> '.trans('admin.add_room_type')),
                 Button::make('csv')->className('btn btn-primary')->text(trans('admin.ex_csv').' <i class="fa fa-file"></i>'),
                 Button::make('excel')->className('btn btn-primary')->text(trans('admin.ex_excel').' <i class="fa fa-file"></i>'),
                 Button::make('pdf')->className('btn btn-primary')->text(trans('admin.ex_pdf').' <i class="fa fa-file"></i>'),
@@ -84,8 +81,6 @@ class UserDataTable extends DataTable
             ->language(datatable_lang());
     }
 
-
-
     /**
      * Get columns.
      *
@@ -94,19 +89,20 @@ class UserDataTable extends DataTable
     protected function getColumns()
     {
         return [
-
             Column::computed('checkbox')
                 ->exportable(false)
                 ->printable(false)
                 ->width(60)
                 ->addClass('text-center')
                 ->title('<input type="checkbox" class="check_all" onclick="check_all()">'),
-            Column::make('id')->title(trans('admin.id-col')),
-            Column::make('name')->title(trans('admin.name-col')),
-            Column::make('email')->title(trans('admin.email-col')),
+           // Column::make('id')->title(trans('admin.id-col')),
+            Column::make('propertyName')->title(trans('admin.propertyName-col')),
+            /*Column::make('starRatingID')->title(trans('admin.starRatingID-col')),
+            Column::make('propertyHostID')->title(trans('admin.propertyHostID-col')),
+            Column::make('propertyAddressID')->title(trans('admin.propertyAddressID-col')),
+            Column::make('propertyTypeID')->title(trans('admin.propertyTypeID-col')),*/
             Column::make('created_at')->title(trans('admin.create-at-col')),
             Column::make('updated_at')->title(trans('admin.update-at-col')),
-
             Column::computed('edit')
                 ->exportable(false)
                 ->printable(false)
@@ -129,6 +125,6 @@ class UserDataTable extends DataTable
      */
     protected function filename()
     {
-        return 'User_' . date('YmdHis');
+        return 'Hotel_' . date('YmdHis');
     }
 }

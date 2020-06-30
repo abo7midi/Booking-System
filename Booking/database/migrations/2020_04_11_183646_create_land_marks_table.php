@@ -17,7 +17,7 @@ class CreateLandMarksTable extends Migration
             $table->id();
 
             $table->string('landMarkName');
-            $table->integer('cityID')->unsigned();
+            $table->unsignedBigInteger('cityID')->unsigned();
             $table->foreign('cityID')->references('id')->on('cities');
 
             $table->timestamps();

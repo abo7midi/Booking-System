@@ -16,9 +16,9 @@ class CreateMilesFromPropertiesTable extends Migration
         Schema::create('miles_from_properties', function (Blueprint $table) {
             $table->id();
             $table->string('milesFromProperty');
-            $table->integer('propertyID')->unsigned();
+            $table->unsignedBigInteger('propertyID')->unsigned();
             $table->foreign('propertyID')->references('id')->on('properties');
-            $table->integer('landMarkID')->unsigned();
+            $table->unsignedBigInteger('landMarkID')->unsigned();
             $table->foreign('landMarkID')->references('id')->on('land_marks');
 
             $table->timestamps();

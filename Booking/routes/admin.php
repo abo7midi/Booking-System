@@ -24,8 +24,10 @@ Route::group(['prefix'=>'admin','namespace'=>'Admin'],function (){
  Route::post('reset/password/{token}','AdminAuth@reset_password_post');
     Route::post('login','AdminAuth@dologin');
   Route::group(['middleware'=>'admin:admin'],function (){
+        Route::resource('admin','AdminController');
         Route::resource('users','UserController');
-      Route::resource('rooms_types','RoomTypeController');
+        Route::resource('rooms_types','RoomTypeController');
+        Route::resource('properties','propertyController');
         Route::get('/',function (){
            return view('admin.home');
         });

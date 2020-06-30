@@ -18,9 +18,9 @@ class CreateRoomAvailablesTable extends Migration
             $table->integer('maxRoomAvailable');
             $table->double('roomPrice');
             $table->date('date');
-            $table->integer('propertyRoomID')->unsigned();
+            $table->unsignedBigInteger('propertyRoomID')->unsigned();
             $table->foreign('propertyRoomID')->references('id')->on('property_room_types');
-            $table->integer('paymentMethodID')->unsigned();
+            $table->unsignedBigInteger('paymentMethodID')->unsigned();
             $table->foreign('paymentMethodID')->references('id')->on('payment_methods');
 
             $table->timestamps();

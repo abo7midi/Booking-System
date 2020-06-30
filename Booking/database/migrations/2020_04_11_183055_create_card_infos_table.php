@@ -20,9 +20,9 @@ class CreateCardInfosTable extends Migration
             $table->string('lastNameOnCard');
             $table->string('cardNumber');
             $table->date('expireDate');
-            $table->integer('customerID')->unsigned();
+            $table->unsignedBigInteger('customerID')->unsigned();
             $table->foreign('customerID')->references('id')->on('customers');
-            $table->integer('cardTypeID')->unsigned();
+            $table->unsignedBigInteger('cardTypeID')->unsigned();
             $table->foreign('cardTypeID')->references('id')->on('card_types');
 
             $table->timestamps();

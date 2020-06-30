@@ -17,9 +17,9 @@ class CreatePropertyReviewsTable extends Migration
             $table->id();
 
             $table->string('description');
-            $table->integer('propertyID')->unsigned();
+            $table->unsignedBigInteger('propertyID')->unsigned();
             $table->foreign('propertyID')->references('id')->on('properties');
-            $table->integer('bookingID')->unsigned();
+            $table->unsignedBigInteger('bookingID')->unsigned();
             $table->foreign('bookingID')->references('id')->on('booking_infos');
 
             $table->timestamps();

@@ -2,21 +2,21 @@
 
 namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
-use App\DataTables\UserDataTable;
+use App\DataTables\PropertiesDataTable;
 use Illuminate\Http\Request;
-use App\User;
 
-class UserController extends Controller
+
+class propertyController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(UserDataTable $user)
+    public function index(PropertiesDataTable $property)
     {
         //
-        return $user->render('admin.users.index',['title'=>'user control']);
+        return $property->render('admin.properties.view_property',['title'=>'property control']);
     }
 
     /**
@@ -26,7 +26,7 @@ class UserController extends Controller
      */
     public function create()
     {
-       return view('admin.users.create',['title'=>trans('admin.add_new_user')]);
+        //
     }
 
     /**
@@ -35,25 +35,9 @@ class UserController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store()
+    public function store(Request $request)
     {
-        $data=$this->validate(request(),[
-            'name'      =>   'required',
-            'email'     =>   'required|email|unique:users',
-            'password'  =>   'required|min:8',
-            'typeID'    =>   'required'
-        ],[],[
-            'name'      =>   trans('admin.name-col'),
-            'email'     =>   trans('admin.email-col'),
-            'password'  =>   trans('admin.password-col')
-        ]);
-        $data['password']=bcrypt(\request('password'));
-
-        print_r($data);
-        User::create($data);
-        session()->flash('added',trans('admin.record_added'));
-        return redirect(aurl('users'));
-
+        //
     }
 
     /**

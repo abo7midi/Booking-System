@@ -16,7 +16,7 @@ class CreateBalancesTable extends Migration
         Schema::create('balances', function (Blueprint $table) {
             $table->id();
 
-            $table->integer('agentID')->unsigned();
+            $table->unsignedBigInteger('agentID')->unsigned();
             $table->foreign('agentID')->references('id')->on('agents');
             $table->string('agentBalance');
 

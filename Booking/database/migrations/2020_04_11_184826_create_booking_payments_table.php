@@ -20,11 +20,11 @@ class CreateBookingPaymentsTable extends Migration
             $table->dateTime('dateTime');
             $table->string('lastFour');
             $table->string('trnsitionNotes');
-            $table->integer('bookingID')->unsigned();
+            $table->unsignedBigInteger('bookingID')->unsigned();
             $table->foreign('bookingID')->references('id')->on('booking_infos');
-            $table->integer('cardID')->unsigned();
+            $table->unsignedBigInteger('cardID')->unsigned();
             $table->foreign('cardID')->references('id')->on('card_infos');
-            $table->integer('paymentMethodID')->unsigned();
+            $table->unsignedBigInteger('paymentMethodID')->unsigned();
             $table->foreign('paymentMethodID')->references('id')->on('payment_methods');
 
             $table->timestamps();

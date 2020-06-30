@@ -16,7 +16,7 @@ class CreateEmailsTable extends Migration
         Schema::create('emails', function (Blueprint $table) {
             $table->id();
 
-            $table->integer('contactID')->unsigned();
+            $table->unsignedBigInteger('contactID')->unsigned();
             $table->foreign('contactID')->references('id')->on('contacts');
 
             $table->timestamps();
